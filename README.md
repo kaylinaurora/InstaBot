@@ -38,6 +38,7 @@ Hi! 👋 I'm InstaBot! I help combat shitty IG Reel integration by utilizing a s
 
 ##  Features
 
+<img src="https://i.ibb.co/YXRRjt0/Insta-Bot-demo.png" width="100%"><br>
 - Send any TikTok video or IG Reel URL as a *server message* to automagically make the video playable within Discord
   - **InstaBot** will replace the domain with `ddinstagram` or `vxtiktok`, accordingly
 - If conversion fails, you can retry by reacting to any message from **InstaBot** with a 👎 emoji
