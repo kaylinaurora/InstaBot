@@ -4,7 +4,7 @@ import re
 from dotenv import load_dotenv
 import os
 
-# Load environment variables from .env file
+# load .env file to grab the bot token
 load_dotenv()
 
 TOKEN = os.getenv('DISCORD_BOT_TOKEN')  # Access the DISCORD_BOT_TOKEN environment variable
@@ -23,15 +23,15 @@ async def on_ready():
 
 @client.event
 async def on_message(message):
-    # Avoid responding to the bot's own messages and ensure message is not from a bot
+    # avoid responding to the bot's own messages
     if message.author == client.user or message.author.bot:
         return
 
-    # Define your URL matching regex patterns
+    # define the URL regex
     instagram_url_regex = re.compile(r'https://www\.instagram\.com/reel/([a-zA-Z0-9_-]+)/')
     tiktok_url_regex = re.compile(r'https://www\.tiktok\.com/(.+)')
 
-    # Instagram link processing
+    # instagram link processing
     instagram_matches = instagram_url_regex.search(message.content)
     if instagram_matches:
         timestamp = int(time.time())
@@ -43,7 +43,7 @@ async def on_message(message):
         except Exception as error:
             print(f'Error deleting message or sending new Instagram message: {error}')
 
-    # TikTok link processing for any URL
+    # tiktok link processing
     tiktok_matches = tiktok_url_regex.search(message.content)
     if tiktok_matches:
         new_tiktok_url = f'https://www.vxtiktok.com/{tiktok_matches.group(1)}'
@@ -56,11 +56,11 @@ async def on_message(message):
 
 @client.event
 async def on_reaction_add(reaction, user):
-    # Check if the reaction is on a message sent by the bot
+    # check if reaction is on a message sent by the bot
     if reaction.message.author.id != client.user.id:
         return
 
-    # Check if the reaction is a thumbs down emoji
+    # if the reaction is a thumbs down, re-send the converted link
     if str(reaction.emoji) == '👎':
         message = reaction.message
         content = message.content
