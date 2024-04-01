@@ -19,7 +19,7 @@ client = discord.Client(intents=intents)
 
 @client.event
 async def on_ready():
-    print('Smoke mid every day!')
+    print('📽️ InstaBot is running')
 
 @client.event
 async def on_message(message):
