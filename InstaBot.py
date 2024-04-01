@@ -71,4 +71,5 @@ async def on_reaction_add(reaction, user):
         except Exception as error:
             print(f'Error handling thumbs down reaction: {error}')
 
+# run the bot
 client.run(TOKEN)
