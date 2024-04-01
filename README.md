@@ -98,7 +98,7 @@ Hi! 👋 I'm InstaBot! I help combat shitty IG Reel integration by utilizing a s
 
 ###  Usage
 
-> Run the bot
+> Run the bot:
 > ```console
 > $ python InstaBot.py
 > ```
