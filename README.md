@@ -32,7 +32,7 @@
 
 ##  Overview
 
-Hi! 👋 I'm InstaBot! I help combat shitty IG Reel integration by utilizing a service called DDinstagram 📸
+Hi! 👋 I'm InstaBot! I help combat shitty IG Reel / TT integration in Discord by utilizing a service called DDinstagram 📸
 
 ---
 
